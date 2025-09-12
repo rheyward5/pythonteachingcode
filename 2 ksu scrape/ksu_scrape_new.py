@@ -12,7 +12,7 @@ def scrape_ksu(ksu_url,page):
     This function is made for scraping the KSU news feed as of its redesign in August 2022.
     '''
     #grab the basic content from a web page
-    source = requests.get(ksu_url+page).text
+    source = requests.get(https://www.kennesaw.edu/news/news-releases/index.php?&categories=news%20releases&year=2020).text
     #using the lxml parser to process the web page text content
     soup = BeautifulSoup(source, 'lxml')
     #create a csv file in "w" write mode so we can add content to it. 
@@ -21,7 +21,7 @@ def scrape_ksu(ksu_url,page):
     #write the header row into our csv file
     csv_writer.writerow(["Number","Title","URL","Date"])
     #show the content of the website we retrieved so that we can find the unique tags around the content we want
-    #print(soup.prettify())
+    print(soup.prettify())
 
     #blog_post = soup.find('ul',class_='two_col has_gap is_30')
     #blog_post = soup.find('div',{"id":"main"})
